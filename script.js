@@ -9,14 +9,18 @@ const colors = [
 const kumpulan = [
   "SHOFI",
   "I LOVE YOU",
+  "ICH LIEBE DICH",
   "NEGLO",
   "GEMBEL",
   "ZENIGER",
   "SOMBEL",
   "SOPI",
+  "RIN",
+  "UTA",
+  "STITCH",
+  "SONIC",
 ];
-const randomIndex = Math.floor(Math.random() * kumpulan.length);
-const letters = kumpulan[randomIndex];
+let letters = "";
 let letterIndex = 0;
 
 function getRandomLetter() {
@@ -49,6 +53,10 @@ function createFirework(x, y) {
 function createBurst(x, y) {
   const numLetters = 15;
   const numSparkles = 50;
+
+  // Pilih kata baru secara acak
+  letters = kumpulan[Math.floor(Math.random() * kumpulan.length)];
+  letterIndex = 0; // Reset indeks huruf
 
   // Letters
   for (let i = 0; i < numLetters; i++) {
